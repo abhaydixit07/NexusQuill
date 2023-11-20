@@ -1,2 +1,2 @@
-# NexusQuill---a-BlogVerse-by-Abhay
+# NexusQuill
 A blog site with functionalitites
