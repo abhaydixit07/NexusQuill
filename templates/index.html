@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+        {% include "header.html"%}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/assets/img/yo.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading typewriter">
+                            <h1>NexusQuill</h1>
+                            <span class="subheading">A BlogVerse by Abhay Dixit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    {% for blog_post in posts:%}
+                    <!-- Post preview-->
+
+                    <div class="post-preview">
+
+<!--                        <div class="col">-->
+<!--&lt;!&ndash;                            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg img-fluid" style="background-image: url('static/assets/img/post-bg.jpg');">&ndash;&gt;-->
+<!--&lt;!&ndash;                              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <h5 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{blog_post.image_alt}}</h5>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                        </div>-->
+
+
+                        <a href="{{url_for('show_post', num=blog_post.id)}}">
+                            <img src={{blog_post.image_url}} class="img-fluid rounded-pill" alt={{blog_post.image_alt}}>
+                            <h2 class="post-title">{{blog_post.title}}</h2>
+                            <h3 class="post-subtitle">{{blog_post['subtitle']}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="{{url_for('about_page')}}">Abhay Dixit</a>
+                            on {{blog_post.date}}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    {%endfor%}
+
+
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        {% include "footer.html" %}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{url_for('static', filename='/js/scripts.js')}}"></script>
+    </body>
+</html>
