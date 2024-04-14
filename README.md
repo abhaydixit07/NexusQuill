@@ -2,6 +2,7 @@
 https://nexusquill.pythonanywhere.com/
 
 NexusQuill is a simple Flask web application for displaying blog posts and allowing users to contact the site owner via email.
+P.S - I have Used pythonanywhere for deployment
 
 ## Prerequisites
 
