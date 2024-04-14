@@ -3,8 +3,8 @@ import requests
 import smtplib
 
 app=Flask(__name__)
-PASSWORD = "pzmyktvgocakvtsb"
-EMAIL = "abhaydixitfake@gmail.com"
+PASSWORD = "Password"
+EMAIL = "EMail"
 
 
 def send_mail(name, email, phone, message):
